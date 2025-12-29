@@ -1,16 +1,17 @@
-# romsis_book_discovery
+Romsis Book Discovery
 
-A new Flutter project.
+Kullanılan kütüphaneler
 
-## Getting Started
+-auto-route : Navigasyon için kullandığım paket. Bütün projelerimde bunu kullanırım nested paths ve guard gibi özellikleri var (bu projede sadece home route u belirttim)
 
-This project is a starting point for a Flutter application.
+-dio : Http in premium hali gibi. http ye göre çok daha fazla özelliği var.
 
-A few resources to get you started if this is your first Flutter project:
+-get_it : Dependency inj için. Kodu dğzenli tutuyor. Lazy singleton ve lazy factory olayları var.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+-equatable : Blocların elitliğini kontrol ediyor , ekran boluna yenilenmiyor
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-freezed : Constructor oluşturma , immutable yapma (direk final) gibi modeller üzerinde özellikleri var. Code gen olduğu için ise yazmaya gerek yok (büyük yğkten kurtarıyor)
+
+-json-seri :Modellerde fromjson ve tojson fonksyionlarını yazıyor (Code gen yine bizi büyük bir yükten kurtarıyor)
+
+-stream_transform : Bloc tarafında debounce işlemi için kullanıldı.
