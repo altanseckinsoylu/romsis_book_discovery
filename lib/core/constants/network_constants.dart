@@ -3,5 +3,5 @@ class NetworkConstants {
   static const int connectionTimeout = 15000;
   static const int receiveTimeout = 15000;
 
-  static const int maxResults = 10;
+  static const int maxResults = 30;
 }

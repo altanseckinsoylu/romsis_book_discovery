@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:romsis_book_discovery/core/container/di_container.dart';
 import 'package:romsis_book_discovery/core/routes/app_router.dart';
 
 void main() {
+  setupLocator();
   runApp(const MyApp());
 }
 
