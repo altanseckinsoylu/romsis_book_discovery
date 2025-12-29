@@ -48,8 +48,8 @@ class BookBloc extends Bloc<BookEvent, BookState> {
         emit(state.copyWith(
           status: BookStatus.success,
           books: books,
-          startIndex:  NetworkConstants.maxResults,
-          hasReachedMax: books.length <  NetworkConstants.maxResults,
+          startIndex: NetworkConstants.maxResults,
+          hasReachedMax: books.isEmpty, 
         ));
       },
       failure: (failure) {
@@ -80,11 +80,19 @@ class BookBloc extends Bloc<BookEvent, BookState> {
 
     result.when(
       success: (newBooks) {
+        if (newBooks.isEmpty) {
+          emit(state.copyWith(
+            isPaginationLoading: false,
+            hasReachedMax: true,
+          ));
+          return;
+        }
+
         emit(state.copyWith(
           isPaginationLoading: false,
           books: List.of(state.books)..addAll(newBooks),
-          startIndex: state.startIndex +  NetworkConstants.maxResults,
-          hasReachedMax: newBooks.isEmpty,
+          startIndex: state.startIndex + NetworkConstants.maxResults,
+          hasReachedMax: false, 
         ));
       },
       failure: (failure) {
