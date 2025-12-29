@@ -1,16 +1,13 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:romsis_book_discovery/core/enums/app_routes_enum.dart';
-import 'package:romsis_book_discovery/core/routes/app_router.gr.dart';
+import 'package:romsis_book_discovery/features/home/presentation/screens/home_view.dart';
+
+part 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: "View,Route")
-class AppRouter extends RootStackRouter {
-  
+class AppRouter extends _$AppRouter {
+    
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(
-      page: HomeRoute.page,
-      path: AppRoutesEnum.home.routeName,
-      initial: true,
-    ),
+    AutoRoute(page: HomeRoute.page, initial: true),
   ];
 }
